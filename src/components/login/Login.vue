@@ -21,4 +21,9 @@ export default {
 </script>
 
 <style lang="css">
+body {
+  background:rgb(75, 128, 218);
+  color:#fff;
+  text-align:center;
+}
 </style>
