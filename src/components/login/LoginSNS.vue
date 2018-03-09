@@ -1,13 +1,17 @@
 <template>
   <div class="bxSns">
-    <button type="button">GOOGLE</button>
-    <button type="button">FACEBOOK</button>
+    <button type="button" v-on:click="loginWithGoogle">GOOGLE</button>
+    <button type="button" id="loginWithFacebook" >FACEBOOK</button>
   </div>
-
 </template>
 
 <script>
 export default {
+  methods: {
+    loginWithGoogle(){
+      this.$emit('login-with-google');
+    }
+  }
 }
 </script>
 

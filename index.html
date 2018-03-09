@@ -3,13 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>pwair_app</title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
   </head>
   <body>
     <div id="app"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAjlejip5IemOidKd9rkqtvLnmfEDEHBYw",
+        authDomain: "pwair-472e1.firebaseapp.com",
+        databaseURL: "https://pwair-472e1.firebaseio.com",
+        projectId: "pwair-472e1",
+        storageBucket: "pwair-472e1.appspot.com",
+        messagingSenderId: "181657868038"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
     <script src="/dist/build.js"></script>
   </body>
 </html>
