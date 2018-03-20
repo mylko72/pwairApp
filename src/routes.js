@@ -18,6 +18,7 @@ export const routes = [
     components: {
       nestedHeader: Header,
       default: Statistic
-    }
+    },
+    props: (route) => ({ query: route.query.address })
   }
 ];

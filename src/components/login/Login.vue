@@ -38,10 +38,11 @@ export default {
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
         // ...
-      }).then(function(user){
+      }).then((user) => {
         console.log(user);
         if(user){
-          window.location = '/home'
+          // window.location = '/home'
+          this.$router.push({ path: 'home' })
         }
       });
     },
@@ -58,10 +59,11 @@ export default {
         console.log(user);
         //this.getResult();
         if(user){
-          window.location = '/home';
+          // window.location = '/home';
+          this.$router.push({ path: 'home' })
         }
 
-      }).catch(function(error) {
+      }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -87,7 +89,7 @@ export default {
         // The signed-in user info.
         var user = result.user;
         console.log(user);
-      }).catch(function(error) {
+      }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;

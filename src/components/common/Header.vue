@@ -1,8 +1,39 @@
 <template>
-  <div class="header">
-    <span class="menu"></span>
-    <h1>PWAir</h1>
-    <span class="user">{{ email }}</span>
+  <div class="header md-layout-column">
+    <md-toolbar>
+      <md-button class="md-icon-button" @click="showNavigation = true">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <h1>PWAir</h1>
+      <span class="reload"><i class="fas fa-sync-alt"></i></span>
+      <span class="user">{{ email }}</span>
+    </md-toolbar>
+
+    <md-drawer :md-active.sync="showNavigation">
+      <md-toolbar class="md-transparent" md-elevation="0">
+        <span class="md-title">PWAir</span>
+      </md-toolbar>
+
+      <md-list>
+        <md-list-item>
+          <a href="#" @click="goPage('/home')"><span class="md-list-item-text">Home</span></a>
+        </md-list-item>
+
+        <md-list-item>
+          <a href="#" @click="goPage('/logs?address='+uAddress)"><span class="md-list-item-text">Statistic</span></a>
+        </md-list-item>
+
+        <md-list-item>
+          <span class="md-list-item-text">Logout</span>
+        </md-list-item>
+
+        <md-list-item>
+          <div>
+            <md-switch v-model="pushOn">Push is {{ pushOn ? 'on' : 'off' }}</md-switch>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-drawer>
   </div>
 
 </template>
@@ -11,9 +42,12 @@
 export default {
   data(){
     return {
+      showNavigation: false,
+      pushOn: false,
       email: ''
     }
   },
+  props: ['uAddress'],
   created(){
     this.getUserInfo();
   },
@@ -37,6 +71,10 @@ export default {
           // ...
         }
       });
+    },
+    goPage(url){
+      this.$router.push({ path: url })
+      this.showNavigation = !this.showNavigation
     }
   }
 }
@@ -44,18 +82,44 @@ export default {
 
 <style scoped>
   .header {
-    position: relative;
-    padding: 10px 20px;
-    overflow: hidden;
+    color:#666;
   }
   h1 {
-    float: left;
     font-size: 1.4rem;
     color: #fff;
   }
-  .user {
-    float: right;
+  .menu {
+    margin-right:10px;
     margin-top:15px;
+    font-size: 1.4rem;
+    color: #fff;
+    cursor:pointer;
+  }
+  .user {
+    margin-left:20px;
     color:#fff;
+  }
+  .reload {
+    position:absolute;
+    top:17px;
+    right:10px;
+    font-size: 1.4rem;
+    color: #fff;
+    cursor:pointer;
+  }
+  .md-toolbar {
+    background-color:transparent;
+    box-shadow:none;
+  }
+  .md-drawer {
+     width: 100%;
+     max-width: calc(100vw - 90px);
+     background:#fff;
+  }
+  .md-drawer .md-list-item-container {
+    font-size:18px;
+  }
+  .md-switch {
+    display: flex;
   }
 </style>

@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+//var es6 = require('es6-promise/auto') //IE를 위한 promise 지원
 
 module.exports = {
   entry: './src/main.js',
