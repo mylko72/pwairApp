@@ -1,0 +1,30 @@
+{
+"DESCRIPTION" : {"PM25":"초미세먼지농도(㎍/㎥)","PM10":"미세먼지(㎍/㎥)","SO2":"아황산가스농도(ppm)","IDEX_MVL":"통합대기환경지수","NO2":"이산화질소농도(ppm)","IDEX_NM":"통합대기환경등급","MSRDT":"측정일시","MSRRGN_NM":"권역명","CO":"일산화탄소농도(ppm)","O3":"오존(ppm)","ARPLT_MAIN":"지수결정물질","MSRSTE_NM":"측정소명"},
+"DATA" : [
+{"co":0.7,"so2":0.003,"msrrgn_nm":"도심권","idex_mvl":"84","o3":0.010,"no2":0.050,"idex_nm":"보통","pm10":31,"msrdt":"201803092100","arplt_main":"NO2","pm25":26,"msrste_nm":"중구"},
+{"co":0.7,"so2":0.006,"msrrgn_nm":"도심권","idex_mvl":"74","o3":0.018,"no2":0.044,"idex_nm":"보통","pm10":36,"msrdt":"201803092100","arplt_main":"PM25","pm25":27,"msrste_nm":"종로구"},
+{"co":0,"so2":0,"msrrgn_nm":"도심권","idex_mvl":"-99","o3":0,"no2":0,"idex_nm":"점검중","pm10":0,"msrdt":"201803092100","arplt_main":"점검중","pm25":0,"msrste_nm":"용산구"},
+{"co":0.5,"so2":0.003,"msrrgn_nm":"서북권","idex_mvl":"-99","o3":0.017,"no2":0.041,"idex_nm":"점검중","pm10":29,"msrdt":"201803092100","arplt_main":"점검중","pm25":24,"msrste_nm":"은평구"},
+{"co":0.5,"so2":0.003,"msrrgn_nm":"서북권","idex_mvl":"-99","o3":0.016,"no2":0.048,"idex_nm":"점검중","pm10":27,"msrdt":"201803092100","arplt_main":"점검중","pm25":24,"msrste_nm":"서대문구"},
+{"co":0.6,"so2":0.001,"msrrgn_nm":"서북권","idex_mvl":"-99","o3":0.005,"no2":0.049,"idex_nm":"점검중","pm10":42,"msrdt":"201803092100","arplt_main":"점검중","pm25":28,"msrste_nm":"마포구"},
+{"co":0.8,"so2":0.003,"msrrgn_nm":"동북권","idex_mvl":"101","o3":0.010,"no2":0.061,"idex_nm":"나쁨","pm10":51,"msrdt":"201803092100","arplt_main":"NO2","pm25":32,"msrste_nm":"광진구"},
+{"co":0.7,"so2":0.005,"msrrgn_nm":"동북권","idex_mvl":"94","o3":0.003,"no2":0.056,"idex_nm":"보통","pm10":48,"msrdt":"201803092100","arplt_main":"NO2","pm25":32,"msrste_nm":"성동구"},
+{"co":0.7,"so2":0.006,"msrrgn_nm":"동북권","idex_mvl":"80","o3":0.010,"no2":0.048,"idex_nm":"보통","pm10":41,"msrdt":"201803092100","arplt_main":"NO2","pm25":31,"msrste_nm":"중랑구"},
+{"co":0.6,"so2":0.006,"msrrgn_nm":"동북권","idex_mvl":"75","o3":0.014,"no2":0.045,"idex_nm":"보통","pm10":33,"msrdt":"201803092100","arplt_main":"NO2","pm25":26,"msrste_nm":"동대문구"},
+{"co":0.7,"so2":0.004,"msrrgn_nm":"동북권","idex_mvl":"71","o3":0.019,"no2":0.039,"idex_nm":"보통","pm10":29,"msrdt":"201803092100","arplt_main":"PM25","pm25":18,"msrste_nm":"성북구"},
+{"co":0.5,"so2":0.006,"msrrgn_nm":"동북권","idex_mvl":"84","o3":0.027,"no2":0.034,"idex_nm":"보통","pm10":57,"msrdt":"201803092100","arplt_main":"PM25","pm25":48,"msrste_nm":"도봉구"},
+{"co":0.6,"so2":0.003,"msrrgn_nm":"동북권","idex_mvl":"71","o3":0.025,"no2":0.035,"idex_nm":"보통","pm10":49,"msrdt":"201803092100","arplt_main":"PM25","pm25":33,"msrste_nm":"강북구"},
+{"co":0.6,"so2":0.005,"msrrgn_nm":"동북권","idex_mvl":"74","o3":0.021,"no2":0.041,"idex_nm":"보통","pm10":52,"msrdt":"201803092100","arplt_main":"PM25","pm25":39,"msrste_nm":"노원구"},
+{"co":0.7,"so2":0.005,"msrrgn_nm":"서남권","idex_mvl":"101","o3":0.006,"no2":0.061,"idex_nm":"나쁨","pm10":37,"msrdt":"201803092100","arplt_main":"NO2","pm25":24,"msrste_nm":"강서구"},
+{"co":0.4,"so2":0.006,"msrrgn_nm":"서남권","idex_mvl":"95","o3":0.007,"no2":0.057,"idex_nm":"보통","pm10":49,"msrdt":"201803092100","arplt_main":"NO2","pm25":46,"msrste_nm":"구로구"},
+{"co":1.4,"so2":0.004,"msrrgn_nm":"서남권","idex_mvl":"99","o3":0.001,"no2":0.059,"idex_nm":"보통","pm10":60,"msrdt":"201803092100","arplt_main":"NO2","pm25":37,"msrste_nm":"영등포구"},
+{"co":0.6,"so2":0.003,"msrrgn_nm":"서남권","idex_mvl":"78","o3":0.017,"no2":0.044,"idex_nm":"보통","pm10":42,"msrdt":"201803092100","arplt_main":"PM25","pm25":33,"msrste_nm":"동작구"},
+{"co":0.7,"so2":0.004,"msrrgn_nm":"서남권","idex_mvl":"101","o3":0.007,"no2":0.061,"idex_nm":"나쁨","pm10":51,"msrdt":"201803092100","arplt_main":"NO2","pm25":49,"msrste_nm":"관악구"},
+{"co":0.7,"so2":0.003,"msrrgn_nm":"서남권","idex_mvl":"92","o3":0.007,"no2":0.055,"idex_nm":"보통","pm10":42,"msrdt":"201803092100","arplt_main":"NO2","pm25":28,"msrste_nm":"금천구"},
+{"co":0.8,"so2":0.005,"msrrgn_nm":"서남권","idex_mvl":"111","o3":0.002,"no2":0.070,"idex_nm":"나쁨","pm10":35,"msrdt":"201803092100","arplt_main":"NO2","pm25":27,"msrste_nm":"양천구"},
+{"co":0.6,"so2":0.005,"msrrgn_nm":"동남권","idex_mvl":"94","o3":0.007,"no2":0.056,"idex_nm":"보통","pm10":43,"msrdt":"201803092100","arplt_main":"NO2","pm25":32,"msrste_nm":"강남구"},
+{"co":0.5,"so2":0.002,"msrrgn_nm":"동남권","idex_mvl":"80","o3":0.010,"no2":0.048,"idex_nm":"보통","pm10":38,"msrdt":"201803092100","arplt_main":"NO2","pm25":22,"msrste_nm":"서초구"},
+{"co":0.8,"so2":0.004,"msrrgn_nm":"동남권","idex_mvl":"81","o3":0.018,"no2":0.046,"idex_nm":"보통","pm10":52,"msrdt":"201803092100","arplt_main":"PM25","pm25":46,"msrste_nm":"송파구"},
+{"co":0.7,"so2":0.003,"msrrgn_nm":"동남권","idex_mvl":"92","o3":0.011,"no2":0.055,"idex_nm":"보통","pm10":57,"msrdt":"201803092100","arplt_main":"NO2","pm25":50,"msrste_nm":"강동구"}
+]
+}

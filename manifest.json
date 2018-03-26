@@ -1,0 +1,27 @@
+{
+  "short_name": "PWAir",
+  "name": "Forecasting Air Status with Push alarm",
+  "icons": [
+    {
+      "src": "./src/assets/pwair_logo_1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "./src/assets/pwair_logo_2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "./src/assets/pwair_logo_3x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "rgb(75, 128, 218)",
+  "theme_color": "rgb(75, 128, 218)",
+  "start_url": "./?homescreen=1",
+  "gcm_sender_id": "181657868038"
+}

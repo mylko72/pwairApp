@@ -59,7 +59,7 @@ export default {
       this.userAddress = value;
       this.getData(this.userAddress);
     });
-    this.$emit('getLoc');  
+    this.$emit('getLoc');
   },
   components: {
     Modal,
@@ -165,7 +165,7 @@ p {
 }
 .map a {
   font-size:1.8rem;
-  color:#fff;
+  color:#fff !important;
 }
 
 .error-txt {

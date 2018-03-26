@@ -29,7 +29,7 @@
 
         <md-list-item>
           <div>
-            <md-switch v-model="pushOn">Push is {{ pushOn ? 'on' : 'off' }}</md-switch>
+            <md-switch ref="switch" v-model="isSubscribed">Push is {{ isSubscribed ? 'on' : 'off' }}</md-switch>
           </div>
         </md-list-item>
       </md-list>
@@ -39,17 +39,38 @@
 </template>
 
 <script>
+import { eventBus } from '../../main.js';
+
 export default {
   data(){
     return {
       showNavigation: false,
-      pushOn: false,
+      // isSubscribed: '',
+      checked: 'disable',
       email: ''
     }
   },
   props: ['uAddress'],
   created(){
     this.getUserInfo();
+    eventBus.$on('updateUI', (isSubscribed) => {
+      console.log('isSubscribed', isSubscribed);
+      this.updateBtn(isSubscribed);
+    })
+  },
+  computed: {
+    isSubscribed: {
+      get(){
+        return this.checked
+      },
+      set(){
+        this.checked = !this.checked;
+        console.log('call set');
+        if(this.checked){
+          this.toggleBtn();
+        }
+      }
+    }
   },
   methods: {
     getUserInfo(){
@@ -71,6 +92,27 @@ export default {
           // ...
         }
       });
+    },
+    updateBtn(isSubscribed) {
+      // 푸시 알람이 차단되어 있는지 확인
+      if (Notification.permission === 'denied') {
+        console.log('Push Messaging Blocked.');
+        // pushButton.disabled = true;
+        updateSubscriptionOnServer(null);
+        return;
+      }
+
+      // 구독 상태 저장
+      this.checked = isSubscribed;
+    },
+    toggleBtn(){
+      if (this.checked) {
+        console.log('call emit');
+        eventBus.$emit('subscribed');
+      } else {
+        // TODO: Unsubscribe user
+      }
+
     },
     goPage(url){
       this.$router.push({ path: url })
