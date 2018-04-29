@@ -1,7 +1,7 @@
 <template>
   <div class="bxSns">
     <button type="button" v-on:click="loginWithGoogle">GOOGLE</button>
-    <button type="button" id="loginWithFacebook" >FACEBOOK</button>
+    <button type="button" v-on:click="loginWithFacebook" >FACEBOOK</button>
   </div>
 </template>
 
@@ -10,6 +10,9 @@ export default {
   methods: {
     loginWithGoogle(){
       this.$emit('login-with-google');
+    },
+    loginWithFacebook(){
+      this.$emit('login-with-facebook');
     }
   }
 }
@@ -26,5 +29,9 @@ export default {
   color:#fff;
   border:0;
   line-height:30px;
+  transition: .3s;
+}
+.bxSns button:hover {
+  background:rgb(15, 60, 97);
 }
 </style>

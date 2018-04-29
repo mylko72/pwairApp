@@ -10,8 +10,6 @@ import { routes } from './routes.js'
 
 export const eventBus = new Vue();
 
-export const applicationServerPublicKey = 'BMf0VCXCXfQoRszse2G_Laa_ntTCw1rgwiYJzFrvmC2fDkcJgyB7DxcboauhEao3O2H6LhFKw9F3QrGSPVj5bxs';
-
 //Vue.use(VueResource);
 Vue.use(VueRouter)
 Vue.use(VueMaterial)

@@ -26,8 +26,6 @@ export default {
         rating: '보통',
         date: 12345,
       },
-      swRegistration: '',
-      isSubscribed: false,
     }
   },
   created(){
@@ -36,20 +34,6 @@ export default {
       this.getLocation();
     } else {
       alert('GPS를 지원하지 않습니다');
-    }
-
-    // 서비스워커 지원여부 파악 및 등록
-    if('serviceWorker' in navigator && 'PushManager' in window){
-      navigator.serviceWorker.register('/sw.js').then((swReg) => {
-        console.log('Service Worker is registered', swReg);
-        this.swRegistration = swReg;
-        this.initUI();
-        // initialiseUI();
-      }).catch(function(err){
-        console.error('서비스워커 등록오류', err);
-      })
-    }else {
-      console.warn('Push messaging is not supported');
     }
 
     eventBus.$on('changeColor', (rating)=>{
@@ -64,13 +48,13 @@ export default {
       }
     });
 
-    eventBus.$on('subscribed', this.subscribeUser);
+    // eventBus.$on('subscribed', this.subscribeUser);
   },
   methods: {
     // 위치정보 얻기
     getLocation() {
       navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords.latitude + ' ' + position.coords.longitude);
+        // console.log(position.coords.latitude + ' ' + position.coords.longitude);
         this.currentPos.latitude = position.coords.latitude;
         this.currentPos.longitude = position.coords.longitude;
         var googlePos = new google.maps.LatLng(this.currentPos.latitude, this.currentPos.longitude);
@@ -159,54 +143,6 @@ export default {
 
       return dongAdress;
     },
-    // 푸시 메시지 등록 여부 확인 (구독권)
-    initUI() {
-      // 사용자가 현재 구독한 상태인지 확인
-      this.swRegistration.pushManager.getSubscription() //구독이 있는 경우 현재 구독으로 확인되는 프라미스를 반환하고 그렇지 않으면 null을 반환하는 메서드
-      .then((subscription) => {
-        this.isSubscribed = !(subscription === null);
-
-        if (this.isSubscribed) {
-          console.log('User IS subscribed.');
-        } else {
-          console.log('User is NOT subscribed.');
-        }
-        // 푸시 등록 여부를 파악하는 UI 코드
-        eventBus.$emit('updateUI', this.isSubscribed);
-      });
-    },
-    // 구독 수신
-    subscribeUser() {
-      // const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
-      this.swRegistration.pushManager.subscribe({
-        userVisibleOnly: true,
-        // applicationServerKey: applicationServerKey
-      })
-      .then((subscription) => {
-        console.log('User is subscribed:', subscription);
-
-        this.updateSubscriptionOnServer(subscription);
-
-        this.isSubscribed = true;
-
-        // 푸시 등록 여부를 파악하는 UI 코드
-        eventBus.$emit('updateUI', this.isSubscribed);
-      })
-      .catch((err) => {
-        console.log('Failed to subscribe the user: ', err);
-        // eventBus.$emit('updateUI', this.isSubscribed);
-      });
-    },
-    // Firebase 서버에 key 저장
-    updateSubscriptionOnServer(subscription, unsubscribed) {
-      if (subscription && !unsubscribed) {
-        // sendDeviceKeytoFirebase(subscription.endpoint.split('send/')[1]);
-        console.log('구독이 수신됨');
-      } else {
-        // removeDeviceKeyinFirebase(subscription.endpoint.split('send/')[1]);
-        console.log('구독이 해지됨');
-      }
-    }
   }
 }
 </script>

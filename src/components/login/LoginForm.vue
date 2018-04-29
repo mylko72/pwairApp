@@ -4,19 +4,22 @@
       <input type="text" class="email" name="email" v-model="email" placeholder="이메일 주소를 입력해주세요." />
     </p>
     <p>
-      <input type="password" class="pw" name="pw" v-model="pw" placeholder="비밀번호를 입력해주세요." />
+      <input type="password" class="pw" name="pw" v-model="password" placeholder="비밀번호를 입력해주세요." />
     </p>
     <button type="button" class="btn_login" v-on:click="loginWithEmail">LOGIN</button>
+    <button type="button" class="btn_signup" v-on:click="signUp">SIGN UP</button>
   </div>
 
 </template>
 
 <script>
+import eventBus from '../common/EventBus.vue';
+
 export default {
   data(){
     return {
       email: this.dataEmail,
-      pw: this.dataPw
+      password: this.dataPw
     }
   },
   props: ['dataEmail', 'dataPw'],
@@ -24,9 +27,12 @@ export default {
     loginWithEmail(){
       var userInfo = {
         email: this.email,
-        pw: this.pw
+        password: this.password
       }
       this.$emit('login-with-email', userInfo);
+    },
+    signUp(){
+      eventBus.$emit('sign-up');
     }
   }
 }
@@ -53,7 +59,13 @@ input {
   background:rgb(213, 214, 130);
 }
 .btn_login {
-  width:100%;
+  width:49%;
+  height:30px;
+  background:rgb(204, 165, 29);
+  line-height: 27px;
+}
+.btn_signup {
+  width:49%;
   height:30px;
   background:rgb(204, 165, 29);
   line-height: 27px;

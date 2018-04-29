@@ -59,6 +59,10 @@ export default {
       this.userAddress = value;
       this.getData(this.userAddress);
     });
+    eventBus.$on('refresh', () => {
+      console.log('refresh');
+      this.getData(this.userAddress);
+    });
     this.$emit('getLoc');
   },
   components: {
@@ -79,8 +83,8 @@ export default {
     },
     getData(userAddress){
       var url = 'http://openapi.seoul.go.kr:8088/746a5361636a6f7337336e4f656579/json/RealtimeCityAir/1/25/';
-      var district = this.getDistrict(userAddress);
-      // var district = '동작구';
+      // var district = this.getDistrict(userAddress);
+      var district = '관악구';
       console.log('address', district);
 
       axios.get(url).then((response) => {
